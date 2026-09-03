@@ -86,7 +86,7 @@ def test_aimlapi_default_headers_identify_nanobot() -> None:
         "HTTP-Referer": "https://github.com/HKUDS/nanobot",
         "X-Title": "nanobot",
         "X-AIMLAPI-Source": "agent/hkuds-nanobot",
-        "X-AIMLAPI-Partner-ID": "part_hkudsnanobot",
+        "X-AIMLAPI-Partner-ID": "part_TcTxHfamJ2kkNiFsYzEVELTy",
     }
     assert PARTNER_ID_PATTERN.match(headers["X-AIMLAPI-Partner-ID"])
     assert SOURCE_PATTERN.match(headers["X-AIMLAPI-Source"])
@@ -113,7 +113,7 @@ def test_aimlapi_user_headers_win_without_mutating_the_spec() -> None:
 
     assert headers["X-Title"] == "my-fork"
     assert headers["X-Custom"] == "1"
-    assert headers["X-AIMLAPI-Partner-ID"] == "part_hkudsnanobot"
+    assert headers["X-AIMLAPI-Partner-ID"] == "part_TcTxHfamJ2kkNiFsYzEVELTy"
     # The registry entry is a shared constant; building the per-request dict
     # must not write back into it.
     assert dict(spec.default_extra_headers) == before

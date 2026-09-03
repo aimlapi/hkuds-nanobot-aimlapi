@@ -202,7 +202,7 @@ PROVIDERS: tuple[ProviderSpec, ...] = (
             ("HTTP-Referer", "https://github.com/HKUDS/nanobot"),
             ("X-Title", "nanobot"),
             ("X-AIMLAPI-Source", "agent/hkuds-nanobot"),
-            ("X-AIMLAPI-Partner-ID", "part_hkudsnanobot"),
+            ("X-AIMLAPI-Partner-ID", "part_TcTxHfamJ2kkNiFsYzEVELTy"),
         ),
         is_gateway=True,
         detect_by_base_keyword="aimlapi",
