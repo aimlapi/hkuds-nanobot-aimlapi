@@ -188,6 +188,26 @@ PROVIDERS: tuple[ProviderSpec, ...] = (
     ),
     # === Gateways (detected by api_key / api_base, not model name) =========
     # Gateways can route any model, so they win in fallback.
+    # AI/ML API: OpenAI-compatible gateway. Models use the "vendor/model" naming
+    # scheme (e.g. "openai/gpt-5"); the full id is sent upstream. The default
+    # headers identify nanobot to the gateway, the same way the OpenRouter
+    # attribution headers do; they ride only on this provider's requests.
+    ProviderSpec(
+        name="aimlapi",
+        keywords=("aimlapi",),
+        env_key="AIMLAPI_API_KEY",
+        display_name="aimlapi.com",
+        backend="openai_compat",
+        default_extra_headers=(
+            ("HTTP-Referer", "https://github.com/HKUDS/nanobot"),
+            ("X-Title", "nanobot"),
+            ("X-AIMLAPI-Source", "agent/hkuds-nanobot"),
+            ("X-AIMLAPI-Partner-ID", "part_TcTxHfamJ2kkNiFsYzEVELTy"),
+        ),
+        is_gateway=True,
+        detect_by_base_keyword="aimlapi",
+        default_api_base="https://api.aimlapi.com/v1",
+    ),
     # OpenRouter: global gateway, keys start with "sk-or-"
     ProviderSpec(
         name="openrouter",

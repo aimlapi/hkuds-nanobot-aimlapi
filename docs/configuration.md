@@ -267,6 +267,7 @@ Tracing covers the providers that go through nanobot's OpenAI-compatible client 
 | Provider | Purpose | Get API Key |
 |----------|---------|-------------|
 | `custom` | Any OpenAI-compatible endpoint | — |
+| `aimlapi` | LLM gateway for aimlapi.com's OpenAI-compatible model catalog | [aimlapi.com](https://aimlapi.com) |
 | `openrouter` | LLM gateway for hosted model families + Voice transcription (STT models) | [openrouter.ai](https://openrouter.ai) |
 | `edenai` | LLM gateway for Eden AI's OpenAI-compatible model catalog | [app.edenai.run](https://app.edenai.run/) |
 | `opencode` | LLM gateway (OpenCode Zen coding-agent models) | [opencode.ai/docs/zen](https://opencode.ai/docs/zen/) |
